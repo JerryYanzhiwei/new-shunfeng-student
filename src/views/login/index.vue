@@ -6,7 +6,7 @@
     }">
     <!-- 登录 -->
     <div v-if="isLogin && deviceType === 1" class="login_content">
-      <p class="login_txt">登录</p>
+      <p class="login_txt">登录1</p>
       <div class="form_item">
         <span class="label_title">手机号</span>
         <el-input type="number" v-model="loginForm.phone" size="mini"></el-input>
