@@ -456,7 +456,7 @@ export default {
       padding: 27px 60px 32px 60px;
       background-repeat: no-repeat;
       background-size: cover;
-      margin-top: 30%;
+      margin-top: 18%;
       color: #fff;
 
       border-radius: 8px;
@@ -480,6 +480,7 @@ export default {
         width: 230px;
         padding: 10px 0;
         margin: 0 auto;
+        cursor: pointer;
         span {
           color: #00b8ff;
           font-size: 12px;
@@ -514,8 +515,9 @@ export default {
       width: 400px;
       padding: 20px;
 
-      background-color: #fff;
+      background-color: #0c3c85;
       border-radius: 8px;
+      margin-left: 40%;
       .btn_contain {
         display: flex;
         justify-content: center;
@@ -527,13 +529,13 @@ export default {
 
         text-align: center;
         font-size: 18px;
+        color: #fff;
         span {
           position: absolute;
           left: 0;
           top: 5px;
 
           font-size: 12px;
-          color: #409EFF;
           cursor: pointer;
         }
       }
@@ -608,6 +610,7 @@ export default {
       height: 100%;
       box-shadow: unset;
       border-radius: 0;
+      margin: unset;
     }
     .registry_content .el-input--mini {
       width: 70%;
@@ -650,7 +653,6 @@ export default {
       .btn_contain {
         .el-button {
           padding: 6px 100px;
-          // background-color: #009af2;
           background: linear-gradient(270deg, #009af2 0%, #0183e9 100%);
           color: #fff;
           border-color: #009af2;
@@ -658,11 +660,45 @@ export default {
       }
     }
   }
+
+  .registry_content {
+    .btn_contain {
+      .el-button--mini {
+        padding: 7px 20px;
+        border-color: #009af2;
+        background-color: #009af2;
+        color: #fff;
+      }
+    }
+  }
+
   .login_form_contain {
-    .el-form-item__label {
-      width: 80px;
+    .el-input {
+      &__inner {
+        background-color: #14438f;
+        border-color: #0b83c1;
+        color: #fff;
+      }
+      &__prefix {
+        color: #fff;
+      }
+      ::placeholder {
+        color: #fff;
+      }
     }
     .el-form-item {
+      &__label {
+        width: 80px;
+        color: #fff;
+      }
+      &__content {
+        .el-button--mini {
+          padding: 4px 15px;
+          border-color: #009af2;
+          background-color: #009af2;
+          color: #fff;
+        }
+      }
       position: relative;
 
       margin-bottom: 5px;
