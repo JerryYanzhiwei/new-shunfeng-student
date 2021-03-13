@@ -151,6 +151,16 @@
               >
             </el-input>
           </el-form-item>
+          <!-- 毕业时间 -->
+          <el-form-item
+            prop="graduationTime"
+            label="毕业时间">
+            <el-input
+              v-model="registryForm.graduationTime"
+              size="mini"
+              >
+            </el-input>
+          </el-form-item>
           <!-- 备注 -->
           <el-form-item
             label="备注">
@@ -222,7 +232,8 @@ export default {
         school: '',
         profession: '',
         grade: '',
-        described: ''
+        described: '',
+        graduationTime: ''
       },
       postForm: null,
       sexArr: [
@@ -265,6 +276,9 @@ export default {
           { required: true, message: '', trigger: 'blur' }
         ],
         grade: [
+          { required: true, message: '', trigger: 'blur' }
+        ],
+        graduationTime: [
           { required: true, message: '', trigger: 'blur' }
         ]
       }
