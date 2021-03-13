@@ -393,7 +393,7 @@ export default {
     },
     // 注册账号
     submitRegistry () {
-      const width = document.body.clientWidth
+      // const width = document.body.clientWidth
       this.$refs.registryForm.validate(async (valid) => {
         if (valid) {
           if (!this.validatePhone(this.registryForm.phone)) {
@@ -416,16 +416,19 @@ export default {
           const res = await this.POST_REGISTRY(this.postForm)
           if (res.result === '0' && res.data) {
             this.$message.success('注册成功')
-            if (width < 500) {
-              this.$alert('注册成功, 请在电脑中继续操作', 'TIP', {
-                confirmButtonText: '确定',
-                callback: action => {
-                  this.drawVisibel = true
-                }
-              })
-            } else {
-              this.drawVisibel = true
-            }
+            setTimeout(() => {
+              location.reload()
+            }, 300)
+            // if (width < 500) {
+            //   this.$alert('注册成功, 请在电脑中继续操作', 'TIP', {
+            //     confirmButtonText: '确定',
+            //     callback: action => {
+            //       this.drawVisibel = true
+            //     }
+            //   })
+            // } else {
+            //   this.drawVisibel = true
+            // }
           }
           console.log('通过', res)
         } else {
