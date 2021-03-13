@@ -1,35 +1,33 @@
 <template>
   <div class="login_container"
     :style="{
-      background: `url(${bg}) repeat center`,
-      backgroundSize: 'cover'
+      backgroundImage: `url(${bg})`
     }">
     <!-- 登录 -->
-    <div v-if="isLogin && deviceType === 1" class="login_content">
+    <div v-if="isLogin && deviceType === 1" class="login_content" :style="{backgroundImage: `url(${denglu})`}">
       <p class="login_txt">登录</p>
       <div class="form_item">
-        <span class="label_title">手机号</span>
-        <el-input type="number" v-model="loginForm.phone" size="mini"></el-input>
+        <el-input type="number" v-model="loginForm.phone" placeholder="手机号" size="mini" prefix-icon="el-icon-user"></el-input>
       </div>
       <div v-if="!loginType" class="form_item">
-        <span class="label_title">密码</span>
-        <el-input type="password" v-model="loginForm.password" size="mini"></el-input>
+        <el-input type="password" v-model="loginForm.password" placeholder="密码" size="mini" prefix-icon="el-icon-lock"></el-input>
       </div>
       <div v-else class="form_item msg_input">
-        <span class="label_title">验证码</span>
-        <el-input v-model="loginForm.verificationCode" size="mini"></el-input>
+        <el-input v-model="loginForm.verificationCode" placeholder="验证码" prefix-icon="el-icon-mobile-phone" size="mini"></el-input>
         <span v-if="!showLoginCode" @click="sendLoginCode" class="send_msg">发送验证码</span>
         <span v-else class="send_msg">{{loginCode}}</span>
       </div>
-      <div class="btn_contain">
+      <div class="form_item2">
         <span @click="isLogin = false">注册</span>
-        <el-button v-if="!loginType" @click="passwordLogin">登录</el-button>
-        <el-button v-if="loginType" @click="codeLogin">登录</el-button>
         <span @click="changeLoginType">
           {{
             !loginType ? '验证码登录' : '密码登录'
           }}
         </span>
+      </div>
+      <div class="btn_contain">
+        <el-button v-if="!loginType" @click="passwordLogin">登录</el-button>
+        <el-button v-if="loginType" @click="codeLogin">登录</el-button>
       </div>
     </div>
     <!-- 注册 -->
@@ -192,7 +190,8 @@
 
 <script>
 import { mapActions } from 'vuex'
-import bg from '@/assets/bg.png'
+import bg from '@/assets/login_bg.png'
+import denglu from '@/assets/denglu.png'
 export default {
   data () {
     return {
@@ -200,6 +199,7 @@ export default {
       prizeCover: require('../../assets/images/cover1.png'),
       prizeBack: require('../../assets/images/cover2.png'),
       bg,
+      denglu,
       showCount: false,
       count: 0,
       timer: null,
@@ -445,6 +445,8 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
     width: 100%;
     height: 100vh;
@@ -454,8 +456,11 @@ export default {
       cursor: pointer;
     }
     .login_content {
-      width: 400px;
-      padding: 20px;
+      padding: 27px 60px 32px 60px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-top: 18%;
+      color: #fff;
 
       border-radius: 8px;
       .login_top {
@@ -467,10 +472,22 @@ export default {
           border-radius: 8px;
         }
       }
-      background-color: #fff;
       .login_txt {
         text-align: center;
         font-size: 18px;
+      }
+      .form_item2 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 230px;
+        padding: 10px 0;
+        margin: 0 auto;
+        cursor: pointer;
+        span {
+          color: #00b8ff;
+          font-size: 12px;
+        }
       }
       .form_item {
         display: flex;
@@ -478,7 +495,7 @@ export default {
         justify-content: center;
         position: relative;
 
-        margin-top: 20px;
+        margin-top: 10px;
         .label_title {
           width: 80px;
         }
@@ -488,30 +505,26 @@ export default {
           right: 40px;
 
           font-size: 12px;
-          color: #409EFF;
+          color: #00b8ff;
           cursor: pointer;
         }
       }
       .btn_contain {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        margin-top: 30px;
-        padding: 0 20px;
-        span {
-          font-size: 12px;
-          color: #409EFF;
-          cursor: pointer;
-        }
+        justify-content: center;
       }
     }
     .registry_content {
       width: 400px;
       padding: 20px;
 
-      background-color: #fff;
+      background-color: #0c3c85;
       border-radius: 8px;
+      margin-left: 40%;
+      .btn_contain {
+        display: flex;
+        justify-content: center;
+      }
       .registry_txt {
         position: relative;
 
@@ -519,13 +532,13 @@ export default {
 
         text-align: center;
         font-size: 18px;
+        color: #fff;
         span {
           position: absolute;
           left: 0;
           top: 5px;
 
           font-size: 12px;
-          color: #409EFF;
           cursor: pointer;
         }
       }
@@ -589,10 +602,6 @@ export default {
         }
       }
     }
-    .btn_contain {
-      margin-top: 15px;
-      text-align: center;
-    }
   }
   @media screen and (max-width: 500px) {
     .login_container .login_content {
@@ -604,6 +613,7 @@ export default {
       height: 100%;
       box-shadow: unset;
       border-radius: 0;
+      margin: unset;
     }
     .registry_content .el-input--mini {
       width: 70%;
@@ -626,11 +636,72 @@ export default {
       padding-right: 80px;
     }
   }
+  .login_container {
+    .form_item {
+      .el-input {
+        &__inner {
+          background-color: #14438f;
+          border-color: #0b83c1;
+          color: #fff;
+        }
+        &__prefix {
+          color: #fff;
+        }
+        ::placeholder {
+          color: #fff;
+        }
+      }
+    }
+    .login_content {
+      .btn_contain {
+        .el-button {
+          padding: 6px 100px;
+          background: linear-gradient(270deg, #009af2 0%, #0183e9 100%);
+          color: #fff;
+          border-color: #009af2;
+        }
+      }
+    }
+  }
+
+  .registry_content {
+    .btn_contain {
+      .el-button--mini {
+        padding: 7px 20px;
+        border-color: #009af2;
+        background-color: #009af2;
+        color: #fff;
+      }
+    }
+  }
+
   .login_form_contain {
-    .el-form-item__label {
-      width: 80px;
+    .el-input {
+      &__inner {
+        background-color: #14438f;
+        border-color: #0b83c1;
+        color: #fff;
+      }
+      &__prefix {
+        color: #fff;
+      }
+      ::placeholder {
+        color: #fff;
+      }
     }
     .el-form-item {
+      &__label {
+        width: 80px;
+        color: #fff;
+      }
+      &__content {
+        .el-button--mini {
+          padding: 4px 15px;
+          border-color: #009af2;
+          background-color: #009af2;
+          color: #fff;
+        }
+      }
       position: relative;
 
       margin-bottom: 5px;
