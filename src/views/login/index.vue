@@ -156,6 +156,7 @@
             <el-input
               v-model="registryForm.educationalYear"
               size="mini"
+              placeholder="年/月，比如2021年6月"
               >
             </el-input>
           </el-form-item>
