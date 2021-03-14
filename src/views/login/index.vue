@@ -151,10 +151,10 @@
           </el-form-item>
           <!-- 毕业时间 -->
           <el-form-item
-            prop="graduationTime"
+            prop="educationalYear"
             label="毕业时间">
             <el-input
-              v-model="registryForm.graduationTime"
+              v-model="registryForm.educationalYear"
               size="mini"
               >
             </el-input>
@@ -233,7 +233,7 @@ export default {
         profession: '',
         grade: '',
         described: '',
-        graduationTime: ''
+        educationalYear: ''
       },
       postForm: null,
       sexArr: [
@@ -278,7 +278,7 @@ export default {
         grade: [
           { required: true, message: '', trigger: 'blur' }
         ],
-        graduationTime: [
+        educationalYear: [
           { required: true, message: '', trigger: 'blur' }
         ]
       }
@@ -349,18 +349,28 @@ export default {
       }
       const res = await this.login(this.loginForm)
       if (res.result === '0') {
-        sessionStorage.setItem('userInfo', JSON.stringify(res.data))
-        this.$router.push('/moduleSelect')
+        this.$alert('选题阶段将于2021年3月19号正式开启，请耐心等待', '提示', {
+          confirmButtonText: '确定',
+          callback: () => {
+            return false
+          }
+        })
+        // sessionStorage.setItem('userInfo', JSON.stringify(res.data))
+        // this.$router.push('/moduleSelect')
       }
-      console.log('密码登录', res)
     },
     async codeLogin () {
       const res = await this.CODE_LOGIN(this.loginForm)
       if (res.result === '0') {
-        sessionStorage.setItem('userInfo', JSON.stringify(res.data))
-        this.$router.push('/moduleSelect')
+        this.$alert('选题阶段将于2021年3月19号正式开启，请耐心等待', '提示', {
+          confirmButtonText: '确定',
+          callback: () => {
+            return false
+          }
+        })
+        // sessionStorage.setItem('userInfo', JSON.stringify(res.data))
+        // this.$router.push('/moduleSelect')
       }
-      console.log('验证码登录', res)
     },
     // 切换登录方式
     changeLoginType () {
@@ -604,6 +614,9 @@ export default {
     }
   }
   @media screen and (max-width: 500px) {
+    .el-message-box {
+      width: 100%;
+    }
     .login_container .login_content {
       box-shadow: unset;
       width: 100%;
