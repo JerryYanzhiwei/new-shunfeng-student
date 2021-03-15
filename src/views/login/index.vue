@@ -470,7 +470,9 @@ export default {
       padding: 27px 60px 32px 60px;
       background-repeat: no-repeat;
       background-size: cover;
-      margin-top: 18%;
+      // margin-top: 18%;
+      position: fixed;
+      bottom: 0;
       color: #fff;
 
       border-radius: 8px;
