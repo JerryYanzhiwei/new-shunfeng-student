@@ -47,12 +47,20 @@
       <p>
         包装类课题介绍
         <i class="iconfont icon-xiazai1 download_btn"
-                @click="download(0)"></i>
+                @click="previewFile(0)"></i>
+                <!-- @click="download(0)"></i> -->
       </p>
       <p>
         物流类课题介绍
         <i class="iconfont icon-xiazai1 download_btn"
-                @click="download(1)"></i>
+                @click="previewFile(1)"></i>
+                <!-- @click="download(1)"></i> -->
+      </p>
+      <p>
+        创想方向课题.pdf
+        <i class="iconfont icon-xiazai1 download_btn"
+                @click="previewFile(2)"></i>
+                <!-- @click="download(2)"></i> -->
       </p>
     </div>
     <PublicTitle title="相关赛事文件下载"/>
@@ -123,6 +131,18 @@ export default {
   },
   methods: {
     ...mapActions(['GET_USER_INFO', 'PUT_USER_INFO', 'GET_DOWNLOAD_TEMPLATE']),
+    // 预览课题
+    previewFile (type) {
+      if (type === 0) {
+        window.open('https://match-1258641020.cos.ap-guangzhou.myqcloud.com/%E5%8C%85%E8%A3%85%E6%96%B9%E5%90%91%E8%AF%BE%E9%A2%98%E4%BB%8B%E7%BB%8D.pdf')
+      }
+      if (type === 1) {
+        window.open('https://match-1258641020.cos.ap-guangzhou.myqcloud.com/%E7%89%A9%E6%B5%81%E6%96%B9%E5%90%91%E8%AF%BE%E9%A2%98%E4%BB%8B%E7%BB%8D.pdf')
+      }
+      if (type === 2) {
+        window.open('https://match-1258641020.cos.ap-guangzhou.myqcloud.com/%E5%88%9B%E6%83%B3%E6%96%B9%E5%90%91%E8%AF%BE%E9%A2%98.pdf')
+      }
+    },
     modelDown () {
       if (!this.checked) {
         this.$message.error('请勾选同意条款')
