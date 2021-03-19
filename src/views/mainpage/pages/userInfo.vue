@@ -63,8 +63,8 @@
                 <!-- @click="download(2)"></i> -->
       </p>
     </div>
-    <PublicTitle title="相关赛事文件下载"/>
-    <div class="user_contain ops_contain">
+    <PublicTitle v-if="false" title="相关赛事文件下载"/>
+    <div v-if="false" class="user_contain ops_contain">
       <p>
         2020顺丰杯物流创新大赛大咖公开课内容提纲-包装
         <i class="iconfont icon-xiazai1 download_btn"
