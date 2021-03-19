@@ -350,27 +350,15 @@ export default {
       }
       const res = await this.login(this.loginForm)
       if (res.result === '0') {
-        this.$alert('选题阶段将于2021年3月19号正式开启，请耐心等待', '提示', {
-          confirmButtonText: '确定',
-          callback: () => {
-            return false
-          }
-        })
-        // sessionStorage.setItem('userInfo', JSON.stringify(res.data))
-        // this.$router.push('/moduleSelect')
+        sessionStorage.setItem('userInfo', JSON.stringify(res.data))
+        this.$router.push('/moduleSelect')
       }
     },
     async codeLogin () {
       const res = await this.CODE_LOGIN(this.loginForm)
       if (res.result === '0') {
-        this.$alert('选题阶段将于2021年3月19号正式开启，请耐心等待', '提示', {
-          confirmButtonText: '确定',
-          callback: () => {
-            return false
-          }
-        })
-        // sessionStorage.setItem('userInfo', JSON.stringify(res.data))
-        // this.$router.push('/moduleSelect')
+        sessionStorage.setItem('userInfo', JSON.stringify(res.data))
+        this.$router.push('/moduleSelect')
       }
     },
     // 切换登录方式
