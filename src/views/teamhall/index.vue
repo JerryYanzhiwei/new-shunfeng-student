@@ -7,7 +7,7 @@
     <el-header class="main_header">
       <MainHeader></MainHeader>
     </el-header>
-    <div class="team_container">
+    <div class="team_container page_to_top">
       <div class="fitler_contain">
         <div>
           <span>

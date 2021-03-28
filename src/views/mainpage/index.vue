@@ -3,7 +3,7 @@
     <el-header class="main_header">
       <MainHeader></MainHeader>
     </el-header>
-    <el-container>
+    <el-container class="page_to_top2">
       <el-aside width="200px">
         <SideMenu />
       </el-aside>

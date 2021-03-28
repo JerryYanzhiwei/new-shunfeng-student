@@ -7,7 +7,7 @@
     <el-header class="main_header">
       <MainHeader></MainHeader>
     </el-header>
-    <div class="main_contain">
+    <div class="main_contain page_to_top">
       <div @click="canCreate" class="module_item">
         创建队伍
       </div>
