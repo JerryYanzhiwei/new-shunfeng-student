@@ -66,25 +66,29 @@
     <PublicTitle v-if="false" title="相关赛事文件下载"/>
     <div v-if="false" class="user_contain ops_contain">
       <p>
-        2020顺丰杯物流创新大赛大咖公开课内容提纲-包装
+        包装类课题介绍
         <i class="iconfont icon-xiazai1 download_btn"
-                @click="openModel(2)"></i>
+          @click="previewFile(3)"></i>
+                <!-- @click="openModel(2)"></i> -->
       </p>
       <p>
-        2020顺丰杯物流创新大赛大咖公开课内容提纲-仓储
+        航空类课题数据
         <i class="iconfont icon-xiazai1 download_btn"
-                @click="openModel(3)"></i>
+          @click="previewFile(4)"></i>
+                <!-- @click="openModel(3)"></i> -->
       </p>
       <p>
-        2020顺丰杯物流创新大赛大咖公开课内容提纲-营运
+        营运类课题数据
         <i class="iconfont icon-xiazai1 download_btn"
-                @click="openModel(4)"></i>
+          @click="previewFile(5)"></i>
+                <!-- @click="openModel(4)"></i> -->
       </p>
-      <p>
+      <!-- <p>
         2020顺丰杯物流创新大赛赛事资料——航空
         <i class="iconfont icon-xiazai1 download_btn"
+          @click="previewFile(2)"></i>
                 @click="openModel(5)"></i>
-      </p>
+      </p> -->
     </div>
     <el-dialog
       title="提示"
@@ -134,13 +138,22 @@ export default {
     // 预览课题
     previewFile (type) {
       if (type === 0) {
-        window.open('https://match-1258641020.cos.ap-guangzhou.myqcloud.com/%E5%8C%85%E8%A3%85%E6%96%B9%E5%90%91%E8%AF%BE%E9%A2%98%E4%BB%8B%E7%BB%8D.pdf')
+        window.open('https://match-1258641020.cos.ap-guangzhou.myqcloud.com/%E5%8C%85%E8%A3%85%E7%B1%BB%E8%AF%BE%E9%A2%98%E4%BB%8B%E7%BB%8D.rar')
       }
       if (type === 1) {
-        window.open('https://match-1258641020.cos.ap-guangzhou.myqcloud.com/%E7%89%A9%E6%B5%81%E6%96%B9%E5%90%91%E8%AF%BE%E9%A2%98%E4%BB%8B%E7%BB%8D.pdf')
+        window.open('https://match-1258641020.cos.ap-guangzhou.myqcloud.com/%E8%88%AA%E7%A9%BA%E7%B1%BB%E8%AF%BE%E9%A2%98%E6%95%B0%E6%8D%AE.rar')
       }
       if (type === 2) {
-        window.open('https://match-1258641020.cos.ap-guangzhou.myqcloud.com/%E5%88%9B%E6%83%B3%E6%96%B9%E5%90%91%E8%AF%BE%E9%A2%98.pdf')
+        window.open('https://match-1258641020.cos.ap-guangzhou.myqcloud.com/%E8%90%A5%E8%BF%90%E7%B1%BB%E8%AF%BE%E9%A2%98%E6%95%B0%E6%8D%AE.rar')
+      }
+      if (type === 3) {
+        window.open('https://match-1258641020.cos.ap-guangzhou.myqcloud.com/%E5%8C%85%E8%A3%85%E7%B1%BB%E8%AF%BE%E9%A2%98%E4%BB%8B%E7%BB%8D.rar')
+      }
+      if (type === 4) {
+        window.open('https://match-1258641020.cos.ap-guangzhou.myqcloud.com/%E8%88%AA%E7%A9%BA%E7%B1%BB%E8%AF%BE%E9%A2%98%E6%95%B0%E6%8D%AE.rar')
+      }
+      if (type === 5) {
+        window.open('https://match-1258641020.cos.ap-guangzhou.myqcloud.com/%E8%90%A5%E8%BF%90%E7%B1%BB%E8%AF%BE%E9%A2%98%E6%95%B0%E6%8D%AE.rar')
       }
     },
     modelDown () {
