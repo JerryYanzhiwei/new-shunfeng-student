@@ -63,10 +63,10 @@
                 <!-- @click="download(2)"></i> -->
       </p>
     </div>
-    <PublicTitle v-if="false" title="相关赛事文件下载"/>
-    <div v-if="false" class="user_contain ops_contain">
+    <PublicTitle title="赛题数据下载"/>
+    <div class="user_contain ops_contain">
       <p>
-        包装类课题介绍
+        包装类课题数据
         <i class="iconfont icon-xiazai1 download_btn"
           @click="previewFile(3)"></i>
                 <!-- @click="openModel(2)"></i> -->
