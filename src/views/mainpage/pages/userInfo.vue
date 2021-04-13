@@ -45,13 +45,13 @@
     <PublicTitle title="赛题详情下载"/>
     <div class="user_contain ops_contain">
       <p>
-        包装类课题介绍
+        包装方向课题介绍.pdf
         <i class="iconfont icon-xiazai1 download_btn"
                 @click="previewFile(0)"></i>
                 <!-- @click="download(0)"></i> -->
       </p>
       <p>
-        物流类课题介绍
+        物流方向课题介绍.pdf
         <i class="iconfont icon-xiazai1 download_btn"
                 @click="previewFile(1)"></i>
                 <!-- @click="download(1)"></i> -->
@@ -138,13 +138,13 @@ export default {
     // 预览课题
     previewFile (type) {
       if (type === 0) {
-        window.open('https://match-1258641020.cos.ap-guangzhou.myqcloud.com/%E5%8C%85%E8%A3%85%E7%B1%BB%E8%AF%BE%E9%A2%98%E4%BB%8B%E7%BB%8D.rar')
+        window.open('https://match-1258641020.cos.ap-guangzhou.myqcloud.com/20210413/%E5%8C%85%E8%A3%85%E6%96%B9%E5%90%91%E8%AF%BE%E9%A2%98%E4%BB%8B%E7%BB%8D.pdf')
       }
       if (type === 1) {
-        window.open('https://match-1258641020.cos.ap-guangzhou.myqcloud.com/%E8%88%AA%E7%A9%BA%E7%B1%BB%E8%AF%BE%E9%A2%98%E6%95%B0%E6%8D%AE.rar')
+        window.open('https://match-1258641020.cos.ap-guangzhou.myqcloud.com/20210413/%E7%89%A9%E6%B5%81%E6%96%B9%E5%90%91%E8%AF%BE%E9%A2%98%E4%BB%8B%E7%BB%8D.pdf')
       }
       if (type === 2) {
-        window.open('https://match-1258641020.cos.ap-guangzhou.myqcloud.com/%E8%90%A5%E8%BF%90%E7%B1%BB%E8%AF%BE%E9%A2%98%E6%95%B0%E6%8D%AE.rar')
+        window.open('https://match-1258641020.cos.ap-guangzhou.myqcloud.com/20210413/%E5%88%9B%E6%83%B3%E6%96%B9%E5%90%91%E8%AF%BE%E9%A2%98.pdf')
       }
       if (type === 3) {
         window.open('https://match-1258641020.cos.ap-guangzhou.myqcloud.com/%E5%8C%85%E8%A3%85%E7%B1%BB%E8%AF%BE%E9%A2%98%E4%BB%8B%E7%BB%8D.rar')
