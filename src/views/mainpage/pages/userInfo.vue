@@ -83,12 +83,12 @@
           @click="previewFile(5)"></i>
                 <!-- @click="openModel(4)"></i> -->
       </p>
-      <!-- <p>
-        2020顺丰杯物流创新大赛赛事资料——航空
+      <p>
+        创想类课题数据
         <i class="iconfont icon-xiazai1 download_btn"
-          @click="previewFile(2)"></i>
-                @click="openModel(5)"></i>
-      </p> -->
+          @click="previewFile(6)"></i>
+                <!-- @click="openModel(5)"></i> -->
+      </p>
     </div>
     <el-dialog
       title="提示"
@@ -154,6 +154,9 @@ export default {
       }
       if (type === 5) {
         window.open('https://match-1258641020.cos.ap-guangzhou.myqcloud.com/%E8%90%A5%E8%BF%90%E7%B1%BB%E8%AF%BE%E9%A2%98%E6%95%B0%E6%8D%AE.rar')
+      }
+      if (type === 6) {
+        window.open('https://match-1258641020.cos.ap-guangzhou.myqcloud.com/%E4%B8%80%E4%BA%8C%E7%BA%BF%E5%B2%97%E4%BD%8D%E5%B2%97%E4%BD%8D%E8%81%8C%E8%B4%A3%E5%8F%8A%E5%9F%BA%E6%9C%AC%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.xlsx')
       }
     },
     modelDown () {
