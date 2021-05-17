@@ -89,6 +89,12 @@
           @click="previewFile(6)"></i>
                 <!-- @click="openModel(5)"></i> -->
       </p>
+      <p>
+        网点位置仿真数据
+        <i class="iconfont icon-xiazai1 download_btn"
+          @click="previewFile(7)"></i>
+                <!-- @click="openModel(5)"></i> -->
+      </p>
     </div>
     <el-dialog
       title="提示"
@@ -157,6 +163,9 @@ export default {
       }
       if (type === 6) {
         window.open('https://match-1258641020.cos.ap-guangzhou.myqcloud.com/%E4%B8%80%E4%BA%8C%E7%BA%BF%E5%B2%97%E4%BD%8D%E5%B2%97%E4%BD%8D%E8%81%8C%E8%B4%A3%E5%8F%8A%E5%9F%BA%E6%9C%AC%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.xlsx')
+      }
+      if (type === 7) {
+        window.open('https://match-1258641020.cos.ap-guangzhou.myqcloud.com/%E7%BD%91%E7%82%B9%E4%BD%8D%E7%BD%AE%E4%BB%BF%E7%9C%9F%E6%95%B0%E6%8D%AE.xlsx')
       }
     },
     modelDown () {

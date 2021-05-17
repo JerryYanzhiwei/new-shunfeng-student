@@ -614,7 +614,8 @@ export default {
     }
     .login_container .registry_content {
       width: 100%;
-      height: 100%;
+      height: 90vh;
+      overflow-y: auto;
       box-shadow: unset;
       border-radius: 0;
       margin: unset;
